@@ -1,0 +1,352 @@
+*, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+/* navbar */
+.navbar{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content:space-between;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.logo{
+    width: 10rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.navbar ul li a:hover{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.list-icon{
+    display: none;
+    cursor: pointer;
+}
+
+/* navbar end */
+
+/* banner section */
+.banner-image{
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/Assets/Image/Banner/productBanner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-top: 80.5px; */
+}
+
+.banner-text{
+    color: white;
+    padding: 3rem;
+}
+
+.banner-text span{
+    color: #29AF65;
+}
+
+
+.banner-text a{
+    text-decoration: none;
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    display: inline-block;
+    background-color: #29AF65;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+/* banner end */
+
+/* list product */
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.list-brand{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filter-brn{
+    cursor: pointer;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s; 
+}
+
+.filter-brn:hover  {
+    transform: scale(1.1); 
+}
+
+
+.page-tittle{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.page-tittle h2 span{
+    color: #29AF65;
+}
+
+
+.filter-btns{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filter-btn{
+    background: none;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    margin: 1rem 2rem;
+    font-size: 1rem;
+    color: #d3d3d3;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-btn::after{
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background-color:#29AF65;
+    transition: all 0.2s ease-in-out
+}
+.filter-btn:hover{
+    color:#29AF65;
+}
+.filter-btn:hover::after{
+    width: 100%;
+}
+
+
+.list-products {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.filter-product {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    width: 200px; 
+    height: 320px; 
+    background-color: white;
+}
+
+.filter-product:hover {
+    transform: translateY(-5px);
+}
+
+.product-card-image {
+    width: 100%;
+    height: 150px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.product-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    transition: transform 0.3s; 
+}
+
+.filter-product:hover .product-card-image img {
+    transform: scale(1.1); 
+}
+
+.product-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1; 
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.product-price span{
+    color: #b4b4b4;
+}
+
+.product-price {
+    font-size: 1.1em;
+    color: #29AF65;
+    font-weight: bold;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.view-product{
+    align-self: center; 
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color:#292A34;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.view-product:hover {
+    color: white;
+    background-color: #29AF65;
+}
+
+/* actived filter */
+.active-btn{
+    color:#29AF65;
+}
+.active-btn::after{
+    width: 100%;
+}
+/*  */
+
+/* list product end */
+
+/* footer */
+
+.footer-container{
+    background-color:#292a2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+
+.footer-desc{
+    color: white;
+    font-size: 1rem;
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.social-icon a{
+    margin: 0 10px;
+}
+
+.copyright{
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* foooter container end */
+
+/* media query */
+@media only screen and (max-width : 768px){
+    
+    .navbar{
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul.hidden{
+        display: none;
+    }
+
+    .list-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .list-products{
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .filter-brn{
+        width: 150px;
+    }
+   
+}

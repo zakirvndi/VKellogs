@@ -1,0 +1,279 @@
+*, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+/* navbar */
+.navbar{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content:space-between;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.logo{
+    width: 10rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.navbar ul li a:hover{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.list-icon{
+    display: none;
+    cursor: pointer;
+}
+
+/* navbar end */
+
+/* banner section */
+.banner-image{
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/Assets/Image/Banner/About.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-top: 80.5px; */
+}
+
+.banner-text{
+    color: white;
+    padding: 3rem;
+}
+
+.banner-text span{
+    color: #29AF65;
+}
+
+/* banner end */
+
+/* about */
+
+.page-tittle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+}
+
+.page-tittle h2 span{
+    color: #29AF65;
+}
+
+.about-container {
+    width: 100%;
+    padding: 1rem 0;
+    height: 100vh;
+    position: relative;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item-slide{
+    position: absolute;
+    inset: 7.5rem 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.list-items{
+    width: 100%;
+}
+
+
+.item-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-slide::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 2%, transparent
+    );
+}
+
+.item-content{
+    color: white;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.item-content p{
+    text-align: justify;
+}
+
+.item-content h2{
+    font-size: 5rem;
+    margin: 0;
+}
+
+.item-slide.active-item{
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.item-slide.item-slide.active-item p,
+.item-slide.item-slide.active-item h2{
+    transform: translateY(30px);
+    filter: blur(10px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.item-slide.item-slide.active-item h2{
+    animation-delay: 1s;
+}
+.item-slide.item-slide.active-item p{
+    animation-duration: 1.2s ;
+}
+
+/* arrow button */
+
+.arrows{
+    position: absolute;
+    top: 20%;
+    right: 50px;
+    z-index: 100;
+}
+
+.arrows button{
+    cursor: pointer;
+    background-color: rgba(238, 238, 238, 0.2);
+    border: none;
+    border-radius: 5px;
+    font: monospace;
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    color: white;
+    transition: .5s;
+}
+
+.arrows button:hover{
+    background-color: white;
+    color: #292A34;
+}
+
+/* about end */
+
+/* footer */
+
+.footer-container{
+    background-color:#292a2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+
+.footer-desc{
+    color: white;
+    font-size: 1rem;
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.social-icon a{
+    margin: 0 10px;
+}
+
+.copyright{
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* foooter container */
+
+/* media query */
+@media only screen and (max-width : 768px){
+    
+    .navbar{
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul.hidden{
+        display: none;
+    }
+
+   
+
+    .list-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .item-content h2{
+        font-size: 60px;
+    }
+
+    .arrows{
+        top: 20%;
+        right: 10%;
+    }
+}
